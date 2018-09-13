@@ -109,7 +109,7 @@ def filter_header_ignore(ignore, header):
             new_header.append(val)
     return new_header
 
-def read_file(file_to_read, delimiter=';', encoding='utf-8-sig', skip=0):
+def read_file(file_to_read, delimiter=None, encoding='utf-8-sig', skip=0):
     def get_real_header(header):
         """ Get real header cut at the first empty column """
         new_header = []
@@ -171,7 +171,7 @@ def do_not_split(split, previous_split_value, split_index, line, o2m=False, id_i
 
     return True
 
-def import_data(config_file, model, header=None, data=None, file_csv=None, context=None, fail_file=False, encoding='utf-8-sig', separator=";", ignore=False, split=False, check=True, max_connection=1, batch_size=10, skip=0, o2m=False):
+def import_data(config_file, model, header=None, data=None, file_csv=None, context=None, fail_file=False, encoding='utf-8-sig', separator=None, ignore=False, split=False, check=True, max_connection=1, batch_size=10, skip=0, o2m=False):
     """
         header and data mandatory in file_csv is not provided
 
